@@ -1,6 +1,7 @@
 import React from "react";
 import { getPokemon } from "../utils/api";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import PokemonCard from "./PokemonCard";
 
 export default class Pokedex extends React.Component {
   constructor(props) {
@@ -33,21 +34,12 @@ export default class Pokedex extends React.Component {
       <React.Fragment>
         <h1>Pokedex</h1>
         <div className="container grid">
-          {this.state.pokemon.map((poke, index) => (
-            <Link to={`pokemon?${index + 1}`}>
-              <div className="pokedex-container">
-                <div key={index + 1}>
-                  <h4 className="card-heading">{poke.name}</h4>
-                  <img
-                    className="pokedex-image"
-                    // src={`https://img.pokemondb.net/artwork/${poke.name}.jpg`}
-                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index +
-                      1}.png`}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </Link>
+          {this.state.pokemon.map(pokemon => (
+            <PokemonCard
+              key={pokemon.name}
+              name={pokemon.name}
+              url={pokemon.url}
+            />
           ))}
         </div>
       </React.Fragment>

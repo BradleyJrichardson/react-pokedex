@@ -1,8 +1,11 @@
 import React from "react";
 import { getSinglePokemon } from "../utils/api";
+import PokemonPage from "./PokemonPage";
+
 export default class Pokemon extends React.Component {
   constructor(props) {
     super(props);
+    console.log(this.props);
     this.state = {
       Singlepokemon: [],
       error: null
@@ -29,11 +32,8 @@ export default class Pokemon extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {console.log(this.state.Singlepokemon)}
         <h1>Pokemon</h1>
-        <div className="container">
-          <h1>here</h1>
-        </div>
+        <PokemonPage data={this.state.Singlepokemon} />
       </React.Fragment>
     );
   }
