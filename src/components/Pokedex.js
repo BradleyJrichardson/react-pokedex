@@ -14,7 +14,7 @@ export default class Pokedex extends React.Component {
     getPokemon()
       .then(data => {
         this.setState({
-          pokemon: data,
+          pokemon: data.results,
           error: null
         });
       })
@@ -32,10 +32,14 @@ export default class Pokedex extends React.Component {
       <React.Fragment>
         <h1>Pokedex</h1>
         <ul>
-          {console.log(this.state.pokemon)}
-
           {this.state.pokemon.map(poke => (
-            <li key={poke.name}>{poke.name}</li>
+            <li key={poke.name}>
+              {poke.name}
+              <img
+                src={`https://img.pokemondb.net/artwork/${poke.name}.jpg`}
+                alt=""
+              />
+            </li>
           ))}
         </ul>
       </React.Fragment>
