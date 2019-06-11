@@ -3,7 +3,25 @@ import React from "react";
 class PokemonPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: "",
+      pokemonIndex: "",
+      imageUrlFront: "",
+      imageUrlback: "",
+      types: [],
+      description: "",
+      stats: {
+        hp: "",
+        attack: "",
+        defense: "",
+        speed: "",
+        specialAttack: "",
+        specialDefense: ""
+      },
+      height: "",
+      weight: "",
+      abilities: ""
+    };
   }
 
   componentDidMount() {}

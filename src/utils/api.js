@@ -8,7 +8,7 @@ export function getPokemon() {
 }
 
 export function getSinglePokemon(index) {
-  return fetch(`https://pokeapi.co/api/v2/pokemon/${index + 1}`)
+  return fetch(`https://pokeapi.co/api/v2/pokemon/${index}`)
     .then(res => res.json())
     .then(data => {
       return data;

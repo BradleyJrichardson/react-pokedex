@@ -5,7 +5,6 @@ import PokemonPage from "./PokemonPage";
 export default class Pokemon extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.state = {
       Singlepokemon: [],
       error: null
@@ -13,7 +12,7 @@ export default class Pokemon extends React.Component {
   }
 
   componentDidMount() {
-    getSinglePokemon(this.props.location.search.replace("?", ""))
+    getSinglePokemon(this.props.match.params.pokemonIndex)
       .then(data => {
         this.setState({
           Singlepokemon: data,
