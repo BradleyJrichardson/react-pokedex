@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
 import PokemonCard from "./PokemonCard";
-
 export default class AllPokemon extends React.Component {
   state = {
     url: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151",

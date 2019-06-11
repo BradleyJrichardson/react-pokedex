@@ -11,7 +11,9 @@ export default class PokemonCard extends React.Component {
   componentDidMount() {
     const { name, url } = this.props;
     const pokemonIndex = url.split("/")[url.split("/").length - 2];
+    console.log(pokemonIndex);
     const imageUrl = `https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${pokemonIndex}.png?raw=true`;
+    console.log(imageUrl);
 
     this.setState({ name, imageUrl, pokemonIndex });
   }
@@ -29,7 +31,7 @@ export default class PokemonCard extends React.Component {
         </h1>
         <h3>{this.state.pokemonIndex}</h3>
         <div>
-          <img src={this.state.imageURL} alt="" />
+          <img className="avatar" src={this.state.imageURL} alt="" />
         </div>
       </div>
     );
