@@ -31,17 +31,20 @@ export default class Pokedex extends React.Component {
     return (
       <React.Fragment>
         <h1>Pokedex</h1>
-        <ul>
+        <div className="container grid">
           {this.state.pokemon.map(poke => (
-            <li key={poke.name}>
-              {poke.name}
-              <img
-                src={`https://img.pokemondb.net/artwork/${poke.name}.jpg`}
-                alt=""
-              />
-            </li>
+            <div className="pokedex-container">
+              <div key={poke.name}>
+                {poke.name}
+                <img
+                  className="pokedex-image"
+                  src={`https://img.pokemondb.net/artwork/${poke.name}.jpg`}
+                  alt=""
+                />
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </React.Fragment>
     );
   }
