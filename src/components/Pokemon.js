@@ -6,16 +6,16 @@ export default class Pokemon extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      Singlepokemon: [],
+      pokemon: [],
       error: null
     };
   }
 
-  componentDidMount() {
-    getSinglePokemon(this.props.match.params.pokemonIndex)
+  async componentDidMount() {
+    await getSinglePokemon(this.props.match.params.pokemonIndex)
       .then(data => {
         this.setState({
-          Singlepokemon: data,
+          pokemon: data,
           error: null
         });
       })
@@ -32,7 +32,7 @@ export default class Pokemon extends React.Component {
     return (
       <React.Fragment>
         <h1>Pokemon</h1>
-        <PokemonPage data={this.state.Singlepokemon} />
+        <PokemonPage data={this.state.pokemon} />
       </React.Fragment>
     );
   }
